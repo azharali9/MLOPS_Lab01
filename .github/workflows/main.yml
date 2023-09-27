@@ -1,0 +1,22 @@
+name: Test Workflow
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Install packages
+      run: pip install pytest
+
+    - name: Run Your Tests
+      run: pytest test.py
+
+    # Add more steps as needed for your specific workflow
